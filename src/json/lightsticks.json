@@ -1,0 +1,59 @@
+{
+    "title": "Light Stick Rent",
+    "horizontal": true,
+    "data": [
+        {
+            "itemname": "BlackPink Official Light Stick",
+            "artist": "BlackPink",
+            "storage": 5,
+            "price": 500,
+            "image": "src/img/lightstick_bp1.jpg",
+            "img": "src/img/lightstick_bp2.jpg",
+            "descriptions": "The light stick is typically designed in the shape of a hammer or a heart, featuring the group's logo and colors. It often includes LED lights and emits a vibrant glow."
+        },
+        {
+            "itemname": "Moobong",
+            "artist": "Mamamoo",
+            "storage": 5,
+            "price": 300,
+            "image": "src/img/lightstick_mmm.jpg",
+            "img": "src/img/lightstick_comingsoon.jpg",
+            "descriptions": "The Moobong features a sleek and elegant design, with the Mamamoo logo incorporated into its structure. It often resembles a miniature microphone or a flower, reflecting the group's musical and colorful image."
+        },
+        {
+            "itemname": "Carat Bong",
+            "artist": "Seventeen",
+            "storage": 5,
+            "price": 400,
+            "image": "src/img/lightstick_svt1",
+            "img": "src/img/lightstick_svt2",
+            "descriptions": "The light stick is shaped like a diamond with a rose quartz and serenity-colored exterior, representing the group's official colors. It features a sleek and elegant design with a diamond-shaped top and a silver base."
+        },
+        {
+            "itemname": "MIDZY Bong",
+            "artist": "ITZY",
+            "storage": 5,
+            "image": "src/img/lightstick_itzy",
+            "img": "src/img/lightstick_comingsoon.jpg",
+            "descriptions": "The ITZY light stick features a sleek and modern design that reflects the group's energetic and youthful image. It often incorporates the group's logo and signature colors, which are red and white, along with other unique design elements."
+        },
+        {
+            "itemname": "NewJeans Light Stick",
+            "artist": "NewJeans",
+            "storage": 5,
+            "price": 400,
+            "image": "src/img/lightstick_njs",
+            "img": "src/img/lightstick_comingsoon.jpg",
+            "descriptions": " A light stick, also known as a light wand or glow stick, is a handheld device commonly used by fans during concerts to show support for their favorite artists. It emits colorful light and often comes in the shape of a stick or wand."
+        },
+        {
+            "itemname": "TXT Light Stick",
+            "artist": "Tomorrow x Together",
+            "storage": 5,
+            "price": 300,
+            "image": "src/img/lightstick_txt",
+            "img": "src/img/lightstick_comingsoon.jpg",
+            "descriptions": "The light stick is used during concerts, fan meetings, and other events to create a synchronized lighting effect among fans, enhancing the overall concert experience. It can be controlled via Bluetooth connectivity through a dedicated mobile app, allowing fans to customize the lighting patterns and colors according to their preferences."
+        }
+    ]
+}
