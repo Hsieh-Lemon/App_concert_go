@@ -1,17 +1,20 @@
 import React from "react";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Navigation from "./src/navigation";
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { config } from '@gluestack-ui/config';
+import { useDispatch, useSelector, Provider } from "react-redux";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{flex: 1}}>
+      
         <GluestackUIProvider config={config}>
           <Navigation />   
         </GluestackUIProvider>         
-      </SafeAreaView>  
+      
     </SafeAreaProvider>
   );
 };

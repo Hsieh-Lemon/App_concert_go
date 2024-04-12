@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { NavigationContainer, useTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,6 +14,7 @@ import DetailScreen from '../screens/DetailScreen.js'
 import MyTheme from '../theme';
 
 import concertData from "../json/concerts.json";
+import shopData from "../json/lightsticks.json";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,6 +35,9 @@ const MyTabs = () => {
             screenOptions={{
                 tabBarInactiveTintColor: colors.light500,
                 tabBarActiveTintColor: colors.primary700,
+                tabBarStyle: { 
+                    paddingBottom: Platform.OS === 'ios' ? 30 : 5, 
+                  },
                 // headerShown: false
             }}
         >
@@ -49,13 +54,10 @@ const MyTabs = () => {
             />
             <Tab.Screen
                 name="Shop"
-                component={ShopScreen}
+                component={ShopStack}
                 options={{
                     title: "Shop",
-                    headerTitleStyle: {
-                        fontWeight: '400',
-                        fontSize: 20
-                    },
+                    headerShown: false,
                     tabBarIcon: ({ color }) => (
                         <AntDesign name="shoppingcart" color={color} size={26} />
                     ),
@@ -67,8 +69,8 @@ const MyTabs = () => {
                 options={{
                     title: "User",
                     headerTitleStyle: {
-                        fontWeight: '400',
-                        fontSize: 20
+                        fontWeight: '500',
+                        fontSize: 26
                     },
                     tabBarIcon: ({ color }) => (
                         <AntDesign name="user" color={color} size={26} />
@@ -92,8 +94,8 @@ const HomeStack = () => {
                 options={{
                     title: concertData.concertPic,
                     headerTitleStyle: {
-                        fontWeight: '400',
-                        fontSize: 20
+                        fontWeight: '500',
+                        fontSize: 26
                     },
                 }}
             />
@@ -105,10 +107,10 @@ const HomeStack = () => {
                     headerStyle: {
                         backgroundColor: '#fff',
                     },
-                    headerTintColor: '#000',
+                    headerTintColor: '#459E94',
                     headerTitleStyle: {
-                        fontWeight: '400',
-                        fontSize: 20
+                        fontWeight: '500',
+                        fontSize: 26
                     },
                 })}
             />
@@ -120,10 +122,48 @@ const HomeStack = () => {
                     headerStyle: {
                         backgroundColor: '#fff',
                     },
+                    headerTintColor: '#459E94',
+                    headerTitleStyle: {
+                        fontWeight: '500',
+                        fontSize: 26,
+                        color:"#000"
+                    },
+                })}
+            />
+        </Stack.Navigator>
+    );
+}
+const ShopStack = () =>{
+    return(
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Shop"
+                component={ShopScreen}
+                options={{
+                    title: shopData.title,
+                    headerStyle: {
+                        backgroundColor: '#fff',
+                    },
                     headerTintColor: '#000',
                     headerTitleStyle: {
-                        fontWeight: '400',
-                        fontSize: 20
+                        fontWeight: '500',
+                        fontSize: 26
+                    },
+                }}
+            />
+            <Stack.Screen
+                name="Detail"
+                component={DetailScreen}
+                options={({ route }) => ({
+                    title: route.params.title,
+                    headerStyle: {
+                        backgroundColor: '#fff',
+                    },
+                    headerTintColor: '#459E94',
+                    headerTitleStyle: {
+                        fontWeight: '500',
+                        fontSize: 26,
+                        color:"#000"
                     },
                 })}
             />

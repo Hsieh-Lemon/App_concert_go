@@ -1,14 +1,13 @@
-import React from 'react';
-import { View } from 'react-native';
-import { Text } from "@gluestack-ui/themed";
+import React, { useState } from 'react';
+import { GluestackUIProvider, Center, HStack, ButtonGroup, Text, Button, ButtonText } from "@gluestack-ui/themed";
+import { config } from "@gluestack-ui/config";
 
 const UserScreen = () => {
+    
     return (
-    <View style={{flex: 1}}>
-        <Text fontSize={30}>
-         -User Page-
-        </Text>              
-    </View>
+        <Button>
+            <ButtonText>Setting</ButtonText>
+        </Button>
     );
 }
 

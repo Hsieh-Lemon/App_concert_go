@@ -1,15 +1,25 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from "@gluestack-ui/themed";
+import { SafeAreaView, View } from 'react-native';
+import Slider from '../components/Slider.js';
+import carouselItems from '../json/concerts.json';
 
-const HomeScreen = () => {
+export default class HomeScreen extends React.Component {
+  render() {
     return (
-    <View style={{flex: 1}}>
-        <Text fontSize={30}>
-         -Home Page-
-        </Text>              
-    </View>
+      <SafeAreaView
+        style={{
+          flex: 1,
+          backgroundColor: 'white',
+        }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'center',
+          }}>
+          <Slider items={carouselItems} />
+        </View>
+      </SafeAreaView>
     );
+  }
 }
-
-export default HomeScreen;
