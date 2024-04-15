@@ -5,7 +5,8 @@ import { Box, Text, Center } from "@gluestack-ui/themed";
 import GeneralSettingScreen from './GeneralSettingScreen';
 import AdvancedSettingScreen from './AdavancedSettingScreen';
 
-export default function TabAccountSettingScreeniewExample() {
+const  SettingScreen = ({route}) => {
+    
     const [selectedIndex, setSelectedIndex] = useState(0);
  
     const SegmentedContent = () => {
@@ -22,12 +23,12 @@ export default function TabAccountSettingScreeniewExample() {
              tabStyle={{ 
                 backgroundColor: "white",
                 marginTop: 10,
-                borderColor: "blue",
+                borderColor: "#5A7EFF",
              }}
              activeTabStyle={{
-                backgroundColor: "blue",
+                backgroundColor: "#5A7EFF",
                 marginTop: 10,    
-                borderColor: "blue",       
+                borderColor: "#5A7EFF",       
              }}
              firstTabStyle={{ marginLeft: 20 }}
              lastTabStyle={{ marginRight: 20 }}
@@ -40,3 +41,4 @@ export default function TabAccountSettingScreeniewExample() {
        </Box>
     );
  }
+ export default SettingScreen;

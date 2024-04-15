@@ -1,15 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from "@gluestack-ui/themed";
+import { Box, Text, Image, Center, ScrollView } from "@gluestack-ui/themed";
+import ConcertDetail from '../components/ConcertDetail';
 
 const ConcertScreen = () => {
+    
     return (
-    <View style={{flex: 1}}>
-        <Text fontSize={30}>
-         -Consert Page-
-        </Text>              
-    </View>
+
+        <ConcertDetail />
+
     );
-}
+};
 
 export default ConcertScreen;

@@ -88,7 +88,7 @@ const DetailScreen = ({ route }) => {
                                     <VStack space="xs">
                                       <ToastTitle>Sucessful</ToastTitle>
                                       <ToastDescription>
-                                        Your book has been add in cart
+                                        Your order has been add in cart
                                       </ToastDescription>
                                     </VStack>
                                   </Toast>

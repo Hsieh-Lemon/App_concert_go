@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { GluestackUIProvider, Center, HStack, Switch, Text } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectColorMode } from "/Users/hsiehdaniely/app_concert_go/src/redux/colorSlice.js";
+import { setColorMode } from "/Users/hsiehdaniely/app_concert_go/src/redux/colorSlice.js";
+
 
 const GeneralSettingScreen = () => {
-    const [colorMode, setColorMode] = useState("light");
-    const toggleColorMode = () => {
-        if (colorMode == "light") setColorMode("dark");
-        else setColorMode("light");
-    };
+    
+    const colorMode = useSelector(selectColorMode);
+    const dispatch = useDispatch();
+    
     return (
         <GluestackUIProvider config={config}>
             <Center flex={1} bg={colorMode == "light" ? "white" : "black"}>
@@ -18,7 +21,7 @@ const GeneralSettingScreen = () => {
                     <Switch
                         name="light Mode"
                         value={colorMode === "light"}
-                        onToggle={toggleColorMode}
+                        onToggle={() => dispatch(setColorMode())}
                         accessibilityLabel="display-mode"
                         accessibilityHint="light or dark mode"
                     />

@@ -1,14 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
-import { Text } from "@gluestack-ui/themed";
+
+import { Box,Text,Center } from "@gluestack-ui/themed";
 
 const AdavancedSettingScreen = () => {
     return (
-    <View style={{flex: 1}}>
+    <Center >
         <Text fontSize={30}>
          -Adavanced Setting Page-
         </Text>              
-    </View>
+    </Center>
     );
 }
 
