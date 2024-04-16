@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { GluestackUIProvider, Center, HStack, Switch, Text } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
 import { useDispatch, useSelector } from 'react-redux';
-import { selectColorMode } from "/Users/hsiehdaniely/app_concert_go/src/redux/colorSlice.js";
-import { setColorMode } from "/Users/hsiehdaniely/app_concert_go/src/redux/colorSlice.js";
+import { selectColorMode } from "src/redux/colorSlice.js";
+import { setColorMode } from "src/redux/colorSlice.js";
 
 
 const GeneralSettingScreen = () => {
