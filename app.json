@@ -1,37 +1,17 @@
 {
   "expo": {
-    "name": "app_concert_go",
-    "slug": "app_concert_go",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash1.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "app-concert-go"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.ntuedtd2024app.app_concert_go"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
     "extra": {
       "eas": {
-        "projectId": "f0234dae-6867-4d5d-9424-032a85d96ca6"
+        "projectId": "cfc81c6d-647b-4998-a0a1-1b34e2e25f48"
       }
-    }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/cfc81c6d-647b-4998-a0a1-1b34e2e25f48"
+    },
+    "android": {},
+    "ios": {}
   }
 }
