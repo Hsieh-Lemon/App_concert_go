@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 import { Box, Text, Center } from "@gluestack-ui/themed";
+import { useSelector } from 'react-redux';
+import { selectColorMode } from '../redux/colorSlice';
 
 import GeneralSettingScreen from './GeneralSettingScreen';
 import AdvancedSettingScreen from './AdavancedSettingScreen';
@@ -15,20 +17,24 @@ const  SettingScreen = ({route}) => {
           <AdvancedSettingScreen/>
           );
     }
- 
+    const colorMode = useSelector(selectColorMode);
+
+    // 根据颜色模式设置背景色
+    const backgroundColor = colorMode === 'light' ? 'white' : 'black';
+    
     return (
-       <Box flex={1} >
+       <Box flex={1} bg={backgroundColor} >
           <SegmentedControlTab
              values={["General", "Advanced"]}
              tabStyle={{ 
                 backgroundColor: "white",
                 marginTop: 10,
-                borderColor: "#5A7EFF",
+                borderColor: "#218E83",
              }}
              activeTabStyle={{
-                backgroundColor: "#5A7EFF",
+                backgroundColor: "#218E83",
                 marginTop: 10,    
-                borderColor: "#5A7EFF",       
+                borderColor: "#218E83",       
              }}
              firstTabStyle={{ marginLeft: 20 }}
              lastTabStyle={{ marginRight: 20 }}

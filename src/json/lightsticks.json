@@ -1,101 +1,56 @@
-[{
-    "title": "Light Stick Rent",
-    "horizontal": true,
-    "data": [
-        {
-            "itemname": "Blink Bong",
-            "artist": "BlackPink",
-            "storage": 5,
-            "price": 500,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_bp1.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_bp2.jpg?raw=true.jpg",
-            "descriptions": "The light stick is typically designed in the shape of a hammer or a heart, featuring the group's logo and colors. It often includes LED lights and emits a vibrant glow."
-        },
-        {
-            "itemname": "Moobong",
-            "artist": "Mamamoo",
-            "storage": 5,
-            "price": 300,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_mmm.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
-            "descriptions": "The Moobong features a sleek and elegant design, with the Mamamoo logo incorporated into its structure. It often resembles a miniature microphone or a flower, reflecting the group's musical and colorful image."
-        },
-        {
-            "itemname": "Carat Bong",
-            "artist": "Seventeen",
-            "storage": 5,
-            "price": 400,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_svt1.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_svt2.jpg?raw=true",
-            "descriptions": "The light stick is shaped like a diamond with a rose quartz and serenity-colored exterior, representing the group's official colors. It features a sleek and elegant design with a diamond-shaped top and a silver base."
-        },
-        {
-            "itemname": "MIDZY Bong",
-            "artist": "ITZY",
-            "storage": 5,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_itzy.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
-            "descriptions": "The ITZY light stick features a sleek and modern design that reflects the group's energetic and youthful image. It often incorporates the group's logo and signature colors, which are red and white, along with other unique design elements."
-        },
-        {
-            "itemname": "NewJeans Light Stick",
-            "artist": "NewJeans",
-            "storage": 5,
-            "price": 400,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_njs.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
-            "descriptions": " A light stick, also known as a light wand or glow stick, is a handheld device commonly used by fans during concerts to show support for their favorite artists. It emits colorful light and often comes in the shape of a stick or wand."
-        },
-        {
-            "itemname": "TXT Light Stick",
-            "artist": "Tomorrow x Together",
-            "storage": 5,
-            "price": 300,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_txt.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
-            "descriptions": "The light stick is used during concerts, fan meetings, and other events to create a synchronized lighting effect among fans, enhancing the overall concert experience. It can be controlled via Bluetooth connectivity through a dedicated mobile app, allowing fans to customize the lighting patterns and colors according to their preferences."
-        }
-    ]
-},
-{
-    "title": "Phone Rent",
-    "horizontal": true,
-    "data": [
-        {
-            "itemname": "Samsung S24 Ultra",
-            "artist": "Samsung",
-            "storage": 5,
-            "price": 900,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_s24_1.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_s24_2.jpg?raw=true",
-            "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
-        },
-        {
-            "itemname": "Samsung Galaxy AI S23",
-            "artist": "Samsung",
-            "storage": 5,
-            "price": 800,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_s23_1.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_s23_2.jpg?raw=true",
-            "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
-        },
-        {
-            "itemname": "iPhone 15 pro",
-            "artist": "Apple",
-            "storage": 5,
-            "price": 1000,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_i15_1.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_i15_2.jpg?raw=true.jpg",
-            "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
-        },
-        {
-            "itemname": "iPhone 14 pro",
-            "artist": "Apple",
-            "storage": 5,
-            "price": 900,
-            "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_i14_1.jpg?raw=true",
-            "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/phone_i14_2.jpg?raw=true",
-            "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
-        }
-    ]
-}]
+[
+    {
+        "itemname": "Blink Bong",
+        "artist": "BlackPink",
+        "storage": 5,
+        "price": 500,
+        "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_bp1.jpg?raw=true",
+        "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_bp2.jpg?raw=true.jpg",
+        "descriptions": "The light stick is typically designed in the shape of a hammer or a heart, featuring the group's logo and colors. It often includes LED lights and emits a vibrant glow."
+    },
+    {
+        "itemname": "Moobong",
+        "artist": "Mamamoo",
+        "storage": 5,
+        "price": 300,
+        "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_mmm.jpg?raw=true",
+        "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
+        "descriptions": "The Moobong features a sleek and elegant design, with the Mamamoo logo incorporated into its structure. It often resembles a miniature microphone or a flower, reflecting the group's musical and colorful image."
+    },
+    {
+        "itemname": "Carat Bong",
+        "artist": "Seventeen",
+        "storage": 5,
+        "price": 400,
+        "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_svt1.jpg?raw=true",
+        "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_svt2.jpg?raw=true",
+        "descriptions": "The light stick is shaped like a diamond with a rose quartz and serenity-colored exterior, representing the group's official colors. It features a sleek and elegant design with a diamond-shaped top and a silver base."
+    },
+    {
+        "itemname": "MIDZY Bong",
+        "artist": "ITZY",
+        "storage": 5,
+        "price": 400,
+        "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_itzy.jpg?raw=true",
+        "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
+        "descriptions": "The ITZY light stick features a sleek and modern design that reflects the group's energetic and youthful image. It often incorporates the group's logo and signature colors, which are red and white, along with other unique design elements."
+    },
+    {
+        "itemname": "NewJeans Light Stick",
+        "artist": "NewJeans",
+        "storage": 5,
+        "price": 400,
+        "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_njs.jpg?raw=true",
+        "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
+        "descriptions": " A light stick, also known as a light wand or glow stick, is a handheld device commonly used by fans during concerts to show support for their favorite artists. It emits colorful light and often comes in the shape of a stick or wand."
+    },
+    {
+        "itemname": "TXT Light Stick",
+        "artist": "Tomorrow x Together",
+        "storage": 5,
+        "price": 300,
+        "image": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_txt.jpg?raw=true",
+        "img": "https://github.com/Hsieh-Lemon/App_concert_go/blob/master/src/img/lightstick_comingsoon.jpg?raw=true",
+        "descriptions": "The light stick is used during concerts, fan meetings, and other events to create a synchronized lighting effect among fans, enhancing the overall concert experience. It can be controlled via Bluetooth connectivity through a dedicated mobile app, allowing fans to customize the lighting patterns and colors according to their preferences."
+    }
+]

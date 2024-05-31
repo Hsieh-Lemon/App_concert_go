@@ -1,45 +1,91 @@
 import React, { useState } from 'react';
-import { Center, useToast, Toast,ToastTitle,ToastDescription, Box, Text, Heading, Image, Button, ButtonText, HStack,VStack, Pressable } from "@gluestack-ui/themed";
+import { useColorScheme, StyleSheet, ActivityIndicator } from "react-native";
+import { Center, Box, Text, Heading, Image, Button, ButtonText, HStack, VStack, Pressable } from "@gluestack-ui/themed";
 import { Badge } from 'react-native-paper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import LottieView from "lottie-react-native";
 
 const DetailScreen = ({ route }) => {
     const { itemname,
         image,
-        img
+        img,
+        storage
     } = route.params;
-    const toast = useToast()
+    const colorScheme = useColorScheme();
+    const [selectedImage, setSelectedImage] = useState(image);
+    const [showAnimation, setShowAnimation] = useState(false);
     const [counter, setCounter] = useState(1);
     const [colorMode, setColorMode] = useState("unpress");
+    const [itemStorage, setItemStorage] = useState(storage);
+    const [loading, setLoading] = useState(true); // State to manage loading spinner
     const toggleColorMode = () => {
         if (colorMode == "unpress") setColorMode("press");
         else setColorMode("unpress");
     };
+    const decreaseCounter = () => {
+        if (counter > 1) {
+            setCounter(counter - 1);
+        }
+    };
+    const increaseCounter = () => {
+        if (counter < itemStorage) {
+            setCounter(counter + 1);
+        }
+    };
+    const handleCheckout = () => {
+        setShowAnimation(true);
+
+    };
+
+    const onAnimationFinish = () => {
+        setShowAnimation(false);
+    };
+
     return (
-        <Box bg="#fff" h="100%">
+        <Box bg={colorScheme == "light" ? "white" : "black"} h="100%">
             <Center>
                 <Center>
+                    {loading && (
+                        <ActivityIndicator size="large" color="#218E83" style={styles.spinner} />
+                    )}
                     <Image
-                        style={{ width: 325, height: 325, borderRadius: 20 }}
-                        source={{ uri: image }}
-                        alt='image'
+                        style={{ width: 325, height: 325, borderRadius: 20, marginTop: 20 }}
+                        source={{ uri: selectedImage }}
+                        alt='selected image'
+                        onLoadStart={() => setLoading(true)}
+                        onLoadEnd={() => setLoading(false)}
                     />
                 </Center>
                 <Box pt="$5">
                     <Center>
                         <HStack space="lg">
-                            <Pressable borderWidth="$1" borderRadius={10} borderColor='$rose500'>
+                            <Pressable
+                                onPress={() => setSelectedImage(image)}
+                                style={[
+                                    styles.imageContainer,
+                                    selectedImage === image && styles.selectedBorder,
+                                ]}>
                                 <Image
-                                    style={{ width: 70, height: 70, borderRadius: 10 }}
+                                    style={styles.thumbnail}
                                     source={{ uri: image }}
                                     alt='image'
+                                    onLoadStart={() => setLoading(true)}
+                                    onLoadEnd={() => setLoading(false)}
                                 />
                             </Pressable>
-                            <Pressable>
+                            <Pressable
+                                onPress={() => setSelectedImage(img)}
+                                style={[
+                                    styles.imageContainer,
+                                    selectedImage === img && styles.selectedBorder,
+                                ]}
+                            >
                                 <Image
-                                    style={{ width: 70, height: 70, borderRadius: 10 }}
+                                    style={styles.thumbnail}
                                     source={{ uri: img }}
                                     alt='img'
+                                    onLoadStart={() => setLoading(true)}
+                                    onLoadEnd={() => setLoading(false)}
                                 />
                             </Pressable>
                         </HStack>
@@ -49,25 +95,25 @@ const DetailScreen = ({ route }) => {
                     <HStack justifyContent='space-between'>
                         <Heading size='2xl'>{itemname}</Heading>
                         <Pressable onPress={toggleColorMode}>
-                            <AntDesign color={colorMode=="unpress"?"#B4B4B4":"red"} name="heart" size={30} pt="$2" />
+                            <AntDesign color={colorMode == "unpress" ? "#B4B4B4" : "red"} name="heart" size={30} pt="$2" />
                         </Pressable>
                     </HStack>
                     <HStack justifyContent='space-between' my='$6'>
-                        <Pressable onPress={() => {setCounter(counter - 1)}}>
-                            
+                        <Pressable onPress={decreaseCounter}>
+
                             <Badge
-                                style={{ backgroundColor: '#D9D9D9',}}
+                                style={{ backgroundColor: '#BFBFBF', }}
                                 size={40}
                                 pl='$5'
                             >-</Badge>
                         </Pressable>
                         <Badge
-                            style={{ backgroundColor: '#D9D9D9' }}
+                            style={{ backgroundColor: '#BFBFBF' }}
                             size={40}
                         >{counter}</Badge>
-                        <Pressable onPress={() => setCounter(counter + 1)}>
+                        <Pressable onPress={increaseCounter}>
                             <Badge
-                                style={{ backgroundColor: '#D9D9D9' }}
+                                style={{ backgroundColor: '#BFBFBF' }}
                                 size={40}
                             >+</Badge>
                         </Pressable>
@@ -79,32 +125,50 @@ const DetailScreen = ({ route }) => {
                         height={70}
                         $active-bg="$success700"
                         onPress={() => {
-                            toast.show({
-                              placement: "top",
-                              render: ({ id }) => {
-                                const toastId = "toast-" + id
-                                return (
-                                  <Toast nativeID={toastId} action="success" variant="accent">
-                                    <VStack space="xs">
-                                      <ToastTitle>Sucessful</ToastTitle>
-                                      <ToastDescription>
-                                        Your order has been add in cart
-                                      </ToastDescription>
-                                    </VStack>
-                                  </Toast>
-                                )
-                              },
-                            })
-                          }}
+                            handleCheckout();
+                        }}
                     >
                         <ButtonText size='3xl'>
                             Check Now
                         </ButtonText>
                     </Button>
                 </Box>
+                {showAnimation && (
+                    <Box style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} bg={colorScheme == "light" ? "white" : "black"}>
+                        <LottieView
+                            source={require("../json/move_shoppingcart.json")}
+                            autoPlay
+                            loop={false}
+                            onAnimationFinish={onAnimationFinish}
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    </Box>
+                )}
             </Center>
+
         </Box>
     );
-}
+};
+const styles = StyleSheet.create({
+    imageContainer: {
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: 'transparent',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    selectedBorder: {
+        borderColor: '#E11D48',
+    },
+    thumbnail: {
+        width: 70,
+        height: 70,
+        borderRadius: 10,
+    },
+    spinner: {
+        position: 'absolute',
+        zIndex: 1,
+    },
+});
 
 export default DetailScreen;

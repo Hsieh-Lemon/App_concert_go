@@ -1,19 +1,15 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
-
-
-  const initialState = { colorMode: "light" };
+import { createSlice } from "@reduxjs/toolkit";
 
   const colorSlice = createSlice({
     name: "color",
-    initialState,
-    // The `reducers` field lets us define reducers and generate associated actions
-    reducers: {
-      setColorMode:(state)=>{
-        state.colorMode = state.colorMode === "light" ? "dark" : "light";
-   
-      }
+    initialState: {
+      colorMode: 'light', 
+    },reducers: {
+      setColorMode: (state, action) => {
+        state.colorMode = action.payload;
+      },
     },
   });
-  export const selectColorMode = (state) => state.color.colorMode;
-  export const {setColorMode} = colorSlice.actions;
-  export default colorSlice.reducer;
+export const { setColorMode } = colorSlice.actions;
+export const selectColorMode = (state) => state.color.colorMode;
+export default colorSlice.reducer;

@@ -1,34 +1,48 @@
 import React, { useState } from 'react';
-import { GluestackUIProvider, Center, HStack, Switch, Text } from "@gluestack-ui/themed";
-import { config } from "@gluestack-ui/config";
-import { useDispatch, useSelector } from 'react-redux';
-import { selectColorMode } from "../redux/colorSlice";
-import { setColorMode } from "../redux/colorSlice";
+import { Appearance, useColorScheme } from "react-native";
+import { selectColorMode ,setColorMode} from '../redux/colorSlice';
 
+import { Box, Center, HStack, Switch, Text } from "@gluestack-ui/themed";
+import { useDispatch, useSelector } from 'react-redux';
 
 const GeneralSettingScreen = () => {
-    
+    const colorScheme = useColorScheme();
     const colorMode = useSelector(selectColorMode);
     const dispatch = useDispatch();
-    
+
     return (
-        <GluestackUIProvider config={config}>
-            <Center flex={1} bg={colorMode == "light" ? "white" : "black"}>
-                <HStack mt={20} space={8} alignItems="center">
-                    <Text size="lg" px="$2" color={colorMode == "dark" ? "white" : "black"}>
-                        {colorMode == "light" ? "Light Mode" : "Dark Mode"}
+        <Box mt="$1" bg={colorScheme == "light" ? "white" : "black"} height="100%">
+            <Center
+                shadow={2}
+                width="90%"
+                mt="$2"
+                px="$2"
+                py="$4"
+                bg={colorScheme == "light" ? "white" : "black"}
+                borderRadius={3}
+                alignSelf="center"
+            >
+                <HStack space={8} alignItems="center">
+                    <Text fontSize={28} px="$2">
+                        {colorScheme == "light" ? "Light Mode" : "Dark Mode"}
                     </Text>
                     <Switch
                         name="light Mode"
-                        value={colorMode === "light"}
-                        onToggle={() => dispatch(setColorMode())}
+                        size="md"
                         accessibilityLabel="display-mode"
                         accessibilityHint="light or dark mode"
+                        $active-bg="#000"
+                        value={colorMode === 'dark'}
+                        onValueChange={() => {
+                            const nextColorMode =
+                                colorMode === "light" ? "dark" : "light";
+                            dispatch(setColorMode(nextColorMode));
+                            Appearance.setColorScheme(nextColorMode);
+                        }}
                     />
                 </HStack>
-                
             </Center>
-        </GluestackUIProvider>
+        </Box>
     );
 }
 

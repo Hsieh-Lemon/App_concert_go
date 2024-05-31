@@ -1,0 +1,38 @@
+[
+    {
+        "itemname": "Samsung S24 Ultra",
+        "artist": "Samsung",
+        "storage": 5,
+        "price": 900,
+        "image": "",
+        "img": "",
+        "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
+    },
+    {
+        "itemname": "Samsung Galaxy AI S23",
+        "artist": "Samsung",
+        "storage": 5,
+        "price": 800,
+        "image": "",
+        "img": "",
+        "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
+    },
+    {
+        "itemname": "iPhone 15 pro",
+        "artist": "Apple",
+        "storage": 5,
+        "price": 1000,
+        "image": "",
+        "img": "",
+        "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
+    },
+    {
+        "itemname": "iPhone 14 pro",
+        "artist": "Apple",
+        "storage": 5,
+        "price": 900,
+        "image": "",
+        "img": "",
+        "descriptions": "A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."
+    }
+]

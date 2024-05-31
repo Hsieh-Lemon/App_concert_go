@@ -11,7 +11,7 @@ export default function Slider({ items }) {
       <Box height={350} padding={0} marginBottom={60}>
         <Center>
           <HStack justifyContent="center">
-            <Pressable onPress={() => navigate('Concert', items)}  >
+            <Pressable onPress={() => navigate('Concert', { concert: item })}  >
               <Image style={styles.image} source={{ uri: item.image }} alt="name" />
             </Pressable>
           </HStack>

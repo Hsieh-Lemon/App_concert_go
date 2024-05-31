@@ -6,28 +6,21 @@ const LightstickDetail = ({ product }) => {
     const { navigate } = useNavigation();
     return (
 
-        <VStack mx="$3">
-
-            <Box my="$3">
-                <Pressable
-                    onPress={() => navigate('Detail', product)}
-                >
-                    <Image
-                        width={200}
-                        height={200}
-                        borderRadius={20}
-                        source={{ uri: product.image }}
-                        alt="itemname"
-                    />
-                </Pressable>
-            </Box>
-            <VStack justifyContent="space-around" flexDirection="column" paddingLeft={12}>
+        <VStack mx="$3" my="$3">
+            <Pressable onPress={() => navigate('Detail', product)}>
+                <Image
+                    width={200}
+                    height={200}
+                    borderRadius={20}
+                    source={{ uri: product.image }}
+                    alt="itemname"
+                />
+            </Pressable>
+            <VStack space="md" alignItems="flex-start">
                 <Text bold>{product.itemname}</Text>
-                <Text >{product.artist}</Text>
+                <Text>{product.artist}</Text>
             </VStack>
-
         </VStack>
-
 
     )
 };
