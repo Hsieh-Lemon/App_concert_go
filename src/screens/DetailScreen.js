@@ -46,8 +46,12 @@ const DetailScreen = ({ route }) => {
             <Center>
                 <Center>
                     {loading && (
-                        <ActivityIndicator size="large" color="#218E83" style={styles.spinner} />
-                    )}
+                        <LottieView
+                            source={require('/Users/hsiehdaniely/app_concert_go/src/json/loading.json')}
+                            autoPlay
+                            loop
+                            style={styles.spinner}
+                        />)}
                     <Image
                         style={{ width: 325, height: 325, borderRadius: 20, marginTop: 20 }}
                         source={{ uri: selectedImage }}
@@ -168,6 +172,8 @@ const styles = StyleSheet.create({
     spinner: {
         position: 'absolute',
         zIndex: 1,
+        width: 100,
+        height: 100,
     },
 });
 

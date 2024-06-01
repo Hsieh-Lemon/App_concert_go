@@ -1,7 +1,8 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 import { selectColorMode } from '../redux/colorSlice';
+import LottieView from 'lottie-react-native';
 
 import { SafeAreaView } from 'react-native';
 import { Box, Text, Image, Center, ScrollView } from '@gluestack-ui/themed';
@@ -20,11 +21,16 @@ const HomeScreen = () => {
   const backgroundColor = colorMode === 'light' ? 'white' : 'black';
 
   if (concertsLoading || lightsLoading || phonesLoading) {
-    return <ActivityIndicator size="large" color="#218E83"  />;
+    return <LottieView
+      source={require('/Users/hsiehdaniely/app_concert_go/src/json/loading.json')}
+      autoPlay
+      loop
+      style={styles.spinner}
+    />;
   }
 
   return (
-    <SafeAreaView style={{  flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 }}>
 
       <ScrollView bg={backgroundColor}>
         <Box mt="$2">
@@ -37,5 +43,13 @@ const HomeScreen = () => {
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
 
+  spinner: {
+    position: 'absolute',
+    zIndex: 1,
+    width: 100,
+    height: 100,
+  },
+});
 export default HomeScreen;
