@@ -2,14 +2,14 @@
   "expo": {
     "extra": {
       "eas": {
-        "projectId": "5959e0a1-dbed-4ed7-adb9-05fd953b2e1f"
+        "projectId": "678131fa-79e1-40b1-8ac3-675e8adec50c"
       }
     },
     "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/cfc81c6d-647b-4998-a0a1-1b34e2e25f48"
+      "url": "https://u.expo.dev/678131fa-79e1-40b1-8ac3-675e8adec50c"
     },
     "android": {
       "package": "com.ntuedtd2024app.fin1concertgo7eykoegpagdvgkdbvsny"
@@ -18,6 +18,6 @@
       "bundleIdentifier": "com.ntuedtd2024app.fin1concertgo7eykoegpagdvgkdbvsny"
     },
     "owner": "ntuedtd2024app",
-    "slug": "fin1concertgo-7eykoegpagdvgkdbvsny"
+    "slug": "fin1concertgo"
   }
 }

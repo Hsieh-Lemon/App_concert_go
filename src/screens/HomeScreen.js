@@ -22,7 +22,7 @@ const HomeScreen = () => {
 
   if (concertsLoading || lightsLoading || phonesLoading) {
     return <LottieView
-      source={require('src/json/loading.json')}
+      source={require('../json/loading.json')}
       autoPlay
       loop
       style={styles.spinner}
