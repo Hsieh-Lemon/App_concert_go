@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet,FlatList } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 import LightstickList from "../components/LightstickList";
 import PhoneList from "../components/PhoneList";

@@ -4,6 +4,9 @@ import { Center, Box, Text, Heading, Image, Button, ButtonText, HStack, VStack, 
 import { Badge } from 'react-native-paper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LottieView from "lottie-react-native";
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
+import { addLike, removeLike, selectLikes } from '../redux/likeSlice';
 
 const DetailScreen = ({ route }) => {
     const { itemname,
@@ -14,10 +17,21 @@ const DetailScreen = ({ route }) => {
     const colorScheme = useColorScheme();
     const [selectedImage, setSelectedImage] = useState(image);
     const [showAnimation, setShowAnimation] = useState(false);
+    const dispatch = useDispatch();
     const [counter, setCounter] = useState(1);
     const [colorMode, setColorMode] = useState("unpress");
     const [itemStorage, setItemStorage] = useState(storage);
-    const [loading, setLoading] = useState(true); // State to manage loading spinner
+    const [loading, setLoading] = useState(true);
+    const likes = useSelector(selectLikes);
+    const isLiked = Array.isArray(likes) && likes.some(like => like.itemname === itemname);
+
+    const handleLikeToggle = () => {
+        if (isLiked) {
+            dispatch(removeLike({ itemname }));
+        } else {
+            dispatch(addLike({ itemname, image: selectedImage }));
+        }
+    };
     const toggleColorMode = () => {
         if (colorMode == "unpress") setColorMode("press");
         else setColorMode("unpress");
@@ -34,7 +48,7 @@ const DetailScreen = ({ route }) => {
     };
     const handleCheckout = () => {
         setShowAnimation(true);
-
+        dispatch(addToCart({ itemname, image: selectedImage, counter }));
     };
 
     const onAnimationFinish = () => {
@@ -62,13 +76,41 @@ const DetailScreen = ({ route }) => {
                 </Center>
                 <Box pt="$5">
                     <Center>
-                        <HStack space="lg">
-                            <Pressable
-                                onPress={() => setSelectedImage(image)}
-                                style={[
-                                    styles.imageContainer,
-                                    selectedImage === image && styles.selectedBorder,
-                                ]}>
+                        {img ? (
+                            <HStack space="lg">
+                                <Pressable
+                                    onPress={() => setSelectedImage(image)}
+                                    style={[
+                                        styles.imageContainer,
+                                        selectedImage === image && styles.selectedBorder,
+                                    ]}
+                                >
+                                    <Image
+                                        style={styles.thumbnail}
+                                        source={{ uri: image }}
+                                        alt='image'
+                                        onLoadStart={() => setLoading(true)}
+                                        onLoadEnd={() => setLoading(false)}
+                                    />
+                                </Pressable>
+                                <Pressable
+                                    onPress={() => setSelectedImage(img)}
+                                    style={[
+                                        styles.imageContainer,
+                                        selectedImage === img && styles.selectedBorder,
+                                    ]}
+                                >
+                                    <Image
+                                        style={styles.thumbnail}
+                                        source={{ uri: img }}
+                                        alt='img'
+                                        onLoadStart={() => setLoading(true)}
+                                        onLoadEnd={() => setLoading(false)}
+                                    />
+                                </Pressable>
+                            </HStack>
+                        ) : (
+                            <Pressable onPress={() => setSelectedImage(image)} style={styles.singleImageContainer}>
                                 <Image
                                     style={styles.thumbnail}
                                     source={{ uri: image }}
@@ -77,29 +119,14 @@ const DetailScreen = ({ route }) => {
                                     onLoadEnd={() => setLoading(false)}
                                 />
                             </Pressable>
-                            <Pressable
-                                onPress={() => setSelectedImage(img)}
-                                style={[
-                                    styles.imageContainer,
-                                    selectedImage === img && styles.selectedBorder,
-                                ]}
-                            >
-                                <Image
-                                    style={styles.thumbnail}
-                                    source={{ uri: img }}
-                                    alt='img'
-                                    onLoadStart={() => setLoading(true)}
-                                    onLoadEnd={() => setLoading(false)}
-                                />
-                            </Pressable>
-                        </HStack>
+                        )}
                     </Center>
                 </Box>
                 <Box p="$2" w="80%">
                     <HStack justifyContent='space-between'>
-                        <Heading size='2xl'>{itemname}</Heading>
-                        <Pressable onPress={toggleColorMode}>
-                            <AntDesign color={colorMode == "unpress" ? "#B4B4B4" : "red"} name="heart" size={30} pt="$2" />
+                        <Heading size='xl'>{itemname}</Heading>
+                        <Pressable onPress={handleLikeToggle}>
+                            <AntDesign color={isLiked ? "red" : "#B4B4B4"} name="heart" size={30} pt="$2" />
                         </Pressable>
                     </HStack>
                     <HStack justifyContent='space-between' my='$6'>
@@ -175,6 +202,13 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
     },
+    singleImageContainer:{
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: '#E11D48',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 });
 
 export default DetailScreen;

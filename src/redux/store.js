@@ -2,18 +2,31 @@ import { configureStore } from '@reduxjs/toolkit';
 import colorReducer from './colorSlice';
 import themeReducer from './themeSlice';
 import accountReducer from "./accountSlice";
+import cartReducer from './cartSlice.js';
+import likeReducer from './likeSlice.js';
 
-// Part2: Combine Reducers and Create a Store
-const store = configureStore({
-   reducer: {
-     color: colorReducer,
-     theme: themeReducer, 
-     account: accountReducer,
+import { persistStore, persistReducer } from 'redux-persist';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-   },
-   devTools: process.env.NODE_ENV !== 'production',
- });
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+};
 
-//  export store to global
-export default store;
 
+export const store = configureStore({
+  reducer: {
+    color: colorReducer,
+    theme: themeReducer, 
+    account: persistReducer(persistConfig, accountReducer),
+    cart:persistReducer(persistConfig,cartReducer),
+    likes:persistReducer(persistConfig,likeReducer)
+  },
+  devTools: process.env.NODE_ENV !== 'production',
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+  });
+
+  export const persistor = persistStore(store);

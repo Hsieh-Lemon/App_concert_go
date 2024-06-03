@@ -6,7 +6,9 @@ import Navigation from "./src/navigation";
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { config } from '@gluestack-ui/config';
 import { Provider } from "react-redux";
-import store from "./src/redux/store";
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from "./src/redux/store";
+
 
 const queryClient = new QueryClient();
 const App = () => {
@@ -19,9 +21,11 @@ const App = () => {
     <SafeAreaProvider>
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
-          <GluestackUIProvider config={config} colorMode={defaultColorMode}>
-            <Navigation />
-          </GluestackUIProvider>
+          <PersistGate loading={null} persistor={persistor}>
+            <GluestackUIProvider config={config} colorMode={defaultColorMode}>
+              <Navigation />
+            </GluestackUIProvider>
+          </PersistGate>
         </Provider>
       </QueryClientProvider>
     </SafeAreaProvider>

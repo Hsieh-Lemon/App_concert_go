@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, VStack,HStack } from "@gluestack-ui/themed";
-import { Text,FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import PhoneDetail from "./PhoneDetail";
 
 
